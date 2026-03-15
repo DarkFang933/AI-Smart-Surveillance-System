@@ -16,7 +16,9 @@ while cap.isOpened():
     
 
     
-    results = model(frame)
+    frame = cv2.resize(frame, (640, 360))
+    results = model(frame, conf=0.5)
+
 
     
     annotated_frame = results[0].plot()
